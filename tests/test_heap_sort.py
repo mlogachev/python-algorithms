@@ -17,7 +17,7 @@ print('===========', '\n')
 ## timeit
 
 print('Testing HeapSort algorithm')
-print('Test on array of lenght {}'.format(len(test_values)))
+print('Test on array of length {}'.format(len(test_values)))
 h = Heap(test_values)
 t = timeit.timeit('h.sort()', setup='from __main__ import h')
 print('Total time : {} seconds'.format(t))
