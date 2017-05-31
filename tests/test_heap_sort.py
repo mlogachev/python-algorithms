@@ -1,7 +1,8 @@
-import timeit
-
+from timeit import default_timer as timer
 from heap_sort.heap_sort import Heap
-from tests.arr import test_values
+import numpy.random as nprnd
+
+test_values = list(nprnd.randint(-1000, 1000, 10000))
 
 # Heap Sort test
 ## Usage example
@@ -16,9 +17,17 @@ print('===========', '\n')
 
 ## timeit
 
+# print('Testing HeapSort algorithm')
+# print('Test on array of length {}'.format(len(test_values)))
+# h = Heap(test_values)
+# t = timeit.timeit('h.sort()', setup='from __main__ import h')
+# print('Total time : {} seconds'.format(t))
+
 print('Testing HeapSort algorithm')
 print('Test on array of length {}'.format(len(test_values)))
+start = timer()
 h = Heap(test_values)
-t = timeit.timeit('h.sort()', setup='from __main__ import h')
-print('Total time : {} seconds'.format(t))
+h.sort()
+end = timer()
+print('Total time : {} seconds'.format(end - start), '\n\n')
 
